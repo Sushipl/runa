@@ -1169,6 +1169,7 @@ export function App() {
 
     let periciaR = useReg.value
 
+    
     let periciasR = periciaR['peri'+pass.Regiao]
     
     setAntCla(adicionar.valu.Classe)
