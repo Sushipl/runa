@@ -165,34 +165,36 @@ function usePasCaracs() {
       value.forEach((ele, index) => {
         // Pericias
         if(index == 1){
-          const puma = ele.split(',')
-          const puma1 = puma[0].split(' ')
-          let l = []
-          perisP = {}
-          if(puma1[0] == "Escolher"){
-            adicionar.setValu()
-            puma.shift()
-            for(let i = 0; i < puma1[1] ; i++){
-              l.push(<Select key={'pericias'+i} array={puma} name={'pericia'+i} onChange={adicionar.handleSelectChange} />)
-            }
-            list.push(l)
-          }else{
-            for(let i = 0; i < puma.length; i++){
-              if(puma[i].indexOf(' ou ') !== -1){
-                let p = puma[i].split(' ou ')
-                l.push(<Select key={'pericias'+i+2} array={p} name={'pericia'+i} onChange={adicionar.handleSelectChange} />)                
-                ele = ele.replace(puma[i],'')
-              }else{
-                perisP = {...perisP, ['pericia'+i]: puma[i]}
+          if(ele != 'null'){
+            const puma = ele.split(',')
+            const puma1 = puma[0].split(' ')
+            let l = []
+            perisP = {}
+            if(puma1[0] == "Escolher"){
+              adicionar.setValu()
+              puma.shift()
+              for(let i = 0; i < puma1[1] ; i++){
+                l.push(<Select key={'pericias'+i} array={puma} name={'pericia'+i} onChange={adicionar.handleSelectChange} />)
               }
+              list.push(l)
+            }else{
+              for(let i = 0; i < puma.length; i++){
+                if(puma[i].indexOf(' ou ') !== -1){
+                  let p = puma[i].split(' ou ')
+                  l.push(<Select key={'pericias'+i+2} array={p} name={'pericia'+i} onChange={adicionar.handleSelectChange} />)                
+                  ele = ele.replace(puma[i],'')
+                }else{
+                  perisP = {...perisP, ['pericia'+i]: puma[i]}
+                }
+              }
+
+              ele = ele.replace(',',', ')
+              
+              l.push(ele)
+
+              list.push(l)
             }
-
-            ele = ele.replace(',',', ')
-            
-            l.push(ele)
-
-            list.push(l)
-          }
+          }else{list.push('null')}
         }
         /* #fff45f */
         // Oficio
@@ -1358,7 +1360,7 @@ export function App() {
             <div className="h-[10%]">
               <span>Deslocamento: </span>
               {
-                (!Number.isNaN(Number(isNull(list[0]))) ? Number(list[1])  : 0)+
+                (!Number.isNaN(Number(isNull(list[1]))) ? Number(list[1])  : 0)+
                 (!Number.isNaN(Number(isNull(list[42]))) ? Number(list[42]) : 0)+
                 (!Number.isNaN(Number(isNull(list[49]))) ? Number(list[49]) : 0)+ 
                 (!Number.isNaN(Number(isNull(list[10]))) ? Number(list[10]) : 0)
