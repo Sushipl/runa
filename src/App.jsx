@@ -1038,7 +1038,7 @@ export function App() {
     return splitCSV(text, result)
   }
 
-  const [csv, setCsv] = useState({ "": ['null', null, 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'] });
+  const [csv, setCsv] = useState({ "": ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'] });
 
   const [subRacas, setSubRacas] = useState({"": ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'] });
 
@@ -1055,8 +1055,8 @@ export function App() {
   /* Puchando os CSVs */
   useEffect(() => {
     
-    async function Fetch(dir){
-      let re = await fetch(dir)
+    function Fetch(dir){
+      let re = fetch(dir)
       return re
     }
 
@@ -1347,6 +1347,8 @@ export function App() {
             </div>
             </div>
           </div>
+          {console.log(list)}
+          {console.log(csv[adicionar.valu.Origem][1])}
           <div className="float-left h-[100%] w-[16%]">
             <TabRolagemDados add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
             <TabEscolherNumeros add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
