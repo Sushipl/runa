@@ -466,10 +466,10 @@ function useCaracs() {
           }
 
           // Traços
-          if (index == 00) {
-            if (index[00] != 'null') {
+          if (index == 0) {
+            if (index[0] != 'null') {
               lista.push(
-                value[00]
+                value[0]
               )
             }
           }
@@ -755,7 +755,7 @@ function UseCla(){
         }
 
         // Modificador de dano de Magia
-        if(index == 00){
+        if(index == 0){
           list.push(ele)
         }
 
@@ -768,13 +768,13 @@ function UseCla(){
         }
 
         // Sub-classe 2
-        if(index == 02){
+        if(index == 2){
           if(ele != 'null'){
             var l = ele.split(',')
             list.push(<Select array={l} name={'SubC2'+value[0]} key={'Sub2'+value[0]} onChange={adicionar.handleSelectChange}/>)
           }else{list.push(ele)}
         }
-        if(index == 03){
+        if(index == 3){
           list.push(ele)
         }
       })
