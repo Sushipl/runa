@@ -1054,34 +1054,40 @@ export async function App() {
   const [antCla, setAntCla] = useState();
 
   /* Puchando os CSVs */
-  useEffect(async () => {
+  useEffect(() => {
     
-    await fetch("./src/assets/tabs/tabRacas.csv").then((r) => r.text())
+    fetch("./src/assets/tabs/tabRacas.csv")
+      .then((r) => r.text())
       .then((text) => {
         setCsv(parseCSVRacas(text));
     });
 
-    await fetch("./src/assets/tabs/tabSub.csv").then((r) => r.text())
+    fetch("./src/assets/tabs/tabSub.csv")
+      .then((r) => r.text())
       .then((text) => {
         setSubRacas(parseCSVSub(text));
     });
 
-    await fetch("./src/assets/tabs/tabPassados.csv").then((r) => r.text())
+    fetch("./src/assets/tabs/tabPassados.csv")
+      .then((r) => r.text())
       .then((text) => {
         setPassado(parseCSVPassados(text));
     });
 
-    await fetch("./src/assets/tabs/tabReg.csv").then((r) => r.text())
+    fetch("./src/assets/tabs/tabReg.csv")
+      .then((r) => r.text())
       .then((text) => {
         setReg(parseCSVReg(text));
     })
 
-    await fetch("./src/assets/tabs/tabCla.csv").then((r) => r.text())
+    fetch("./src/assets/tabs/tabCla.csv")
+      .then((r) => r.text())
       .then((text) => {
         setCla(parseCSVCla(text));
     })
 
-    await fetch("./src/assets/tabs/tabSubCla.csv").then((r) => r.text())
+    fetch("./src/assets/tabs/tabSubCla.csv")
+      .then((r) => r.text())
       .then((text) => {
         setSubCla(parseCSVSubCla(text));
     })
