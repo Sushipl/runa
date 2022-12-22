@@ -5,7 +5,7 @@ export const Camp = ({num, aume, dimi}) => {
     let mod = Math.floor((num-10)/2)
     
     const [forma, setForma] = useState();
-    
+    console.log('aaa17')
     useEffect(() => {
         if((typeof aume === 'function') & (typeof dimi === 'function')){
             setForma(
@@ -31,7 +31,7 @@ export const Camp = ({num, aume, dimi}) => {
 
     return (
         <div className="flex items-center justify-center w-28 border-gray-900 mx-auto my-3 border-4">
-            
+            {console.log('aaa18')}           
             <span className="text-3xl">{num} </span>
             
         
