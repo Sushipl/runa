@@ -100,7 +100,7 @@ export const TabRolagemDados = ({add=[null, null], esc=0, set=() => {}}) => {
             ,Math.floor((car+addcar-10)/2)
     ])
     }, [num, esc])
-    
+    console.log('aaa8')
     /*<button onClick={()=>lancDados(setNum)}>Rolar</button>*/
     if(esc==1){
         return(
