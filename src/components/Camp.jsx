@@ -10,8 +10,8 @@ export const Camp = ({num, aume, dimi}) => {
         if((typeof aume === 'function') & (typeof dimi === 'function')){
             setForma(
                 <div>
-                    <button className="" onClick={aume}><img src={"Uarrow.png"}/></button><br/>
-                    <button className="" onClick={dimi}><img src={"Darrow.png"}/></button><br/>
+                    <button className="" onClick={aume}><img src={"/Uarrow.png"}/></button><br/>
+                    <button className="" onClick={dimi}><img src={"/Darrow.png"}/></button><br/>
                 </div>
             )
         }else if(typeof aume === 'function'){
