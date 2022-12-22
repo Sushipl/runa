@@ -33,7 +33,7 @@ export const TabPontosSoma = ({add=[null, null], esc=0, set=()=>{}}) => {
     const [addint, setAddint] = useState(0);
     const [addsab, setAddsab] = useState(0);
     const [addcar, setAddcar] = useState(0);
-    
+    console.log('aaa7')
     useEffect(() => {
         let forc = 0;
         let des = 0;
@@ -63,7 +63,7 @@ export const TabPontosSoma = ({add=[null, null], esc=0, set=()=>{}}) => {
         setAddsab(sab);
         setAddcar(car);
     }, [add]);
-      
+    console.log('aaa4')
     const [forc, setForc] = useState(8);
     const [des, setDes] = useState(8);
     const [cons, setCons] = useState(8);
@@ -83,10 +83,11 @@ export const TabPontosSoma = ({add=[null, null], esc=0, set=()=>{}}) => {
             ,Math.floor((car+addcar-10)/2)
     ])
     }, [pts])
-
+    console.log('aaa3')
     if(esc===0){
         return (
             <div>
+                {console.log('aaa2')}
                 <span>{pts}</span><br/>
                 
                 <span>Força</span> <Camp num={forc+addforc} aume={() => aume(forc, setForc, setPts, pts)} dimi={() => dimi(forc, setForc, setPts, pts)}/>

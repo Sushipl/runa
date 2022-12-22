@@ -45,8 +45,6 @@ export const TabRolagemDados = ({add=[null, null], esc=0, set=() => {}}) => {
     const [addsab, setAddsab] = useState(0);
     const [addcar, setAddcar] = useState(0);
 
-    console.log('aaa3')
-
     useEffect(() => {
         let forc = 0;
         let des = 0;
@@ -54,7 +52,6 @@ export const TabRolagemDados = ({add=[null, null], esc=0, set=() => {}}) => {
         let int = 0;
         let sab = 0;
         let car = 0;
-        console.log('aaa6')
         add.forEach((ele)=> {
             if(ele=="forc"){
                 forc++
@@ -70,7 +67,6 @@ export const TabRolagemDados = ({add=[null, null], esc=0, set=() => {}}) => {
                 car++
             }
         })
-        console.log('aaa7')
         setAddforc(forc);
         setAdddes(des);
         setAddcons(cons);
@@ -80,8 +76,6 @@ export const TabRolagemDados = ({add=[null, null], esc=0, set=() => {}}) => {
     }, [add]);
     const [num, setNum] = useState(lancDadosP);
 
-    console.log('aaa5')
-
     const [forc, setForc] = useState(0);
     const [des, setDes] = useState(0);
     const [cons, setCons] = useState(0);
@@ -90,7 +84,6 @@ export const TabRolagemDados = ({add=[null, null], esc=0, set=() => {}}) => {
     const [car, setCar] = useState(0);
 
     useEffect(() => {
-        console.log('aaa4')
         set([
             Math.floor((forc+addforc-10)/2)
             ,Math.floor((des+adddes-10)/2)
@@ -100,12 +93,10 @@ export const TabRolagemDados = ({add=[null, null], esc=0, set=() => {}}) => {
             ,Math.floor((car+addcar-10)/2)
     ])
     }, [num, esc])
-    console.log('aaa8')
     /*<button onClick={()=>lancDados(setNum)}>Rolar</button>*/
     if(esc===1){
         return(
             <div>
-            {console.log('aaa2')}
                 <label>{num}</label><br/>
                 
                 <span>Força</span><Camp num={forc+addforc} dimi={() => coloc(num, setForc, forc, setNum)} />
