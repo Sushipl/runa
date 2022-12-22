@@ -84,7 +84,7 @@ export const TabPontosSoma = ({add=[null, null], esc=0, set=()=>{}}) => {
     ])
     }, [pts])
 
-    if(esc==0){
+    if(esc===0){
         return (
             <div>
                 <span>{pts}</span><br/>

@@ -71,7 +71,7 @@ export const TabEscolherNumeros = ({add=[null, null], esc=0, set= () => {}}) => 
     ])
     }, [pts, esc])
 
-    if(esc==2){
+    if(esc===2){
         return(
             <div>
                 <label>{pts}</label><br/>

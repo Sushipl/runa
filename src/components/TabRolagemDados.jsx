@@ -102,7 +102,7 @@ export const TabRolagemDados = ({add=[null, null], esc=0, set=() => {}}) => {
     }, [num, esc])
     console.log('aaa8')
     /*<button onClick={()=>lancDados(setNum)}>Rolar</button>*/
-    if(esc==1){
+    if(esc===1){
         return(
             <div>
             {console.log('aaa2')}
@@ -116,5 +116,5 @@ export const TabRolagemDados = ({add=[null, null], esc=0, set=() => {}}) => {
                 <span>Carisma</span><Camp num={car+addcar} dimi={() => coloc(num, setCar, car, setNum)} />
             </div>
         )
-    }
+    }else{return(<></>)}
 }
