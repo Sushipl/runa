@@ -1055,45 +1055,33 @@ export async function App() {
 
   /* Puchando os CSVs */
   useEffect(async () => {
-
-    let tabraca = await fetch("./src/assets/tabs/tabRacas.csv")
     
-    tabraca.then((r) => r.text())
+    await fetch("./src/assets/tabs/tabRacas.csv").then((r) => r.text())
       .then((text) => {
         setCsv(parseCSVRacas(text));
     });
 
-    let tabsub = await fetch("./src/assets/tabs/tabSub.csv")
-      
-    tabsub.then((r) => r.text())
+    await fetch("./src/assets/tabs/tabSub.csv").then((r) => r.text())
       .then((text) => {
         setSubRacas(parseCSVSub(text));
     });
 
-    let tabpas = await fetch("./src/assets/tabs/tabPassados.csv")
-      
-    tabpas.then((r) => r.text())
+    await fetch("./src/assets/tabs/tabPassados.csv").then((r) => r.text())
       .then((text) => {
         setPassado(parseCSVPassados(text));
     });
 
-    let tabreg = await fetch("./src/assets/tabs/tabReg.csv")
-      
-    tabreg.then((r) => r.text())
+    await fetch("./src/assets/tabs/tabReg.csv").then((r) => r.text())
       .then((text) => {
         setReg(parseCSVReg(text));
     })
 
-    let tabcla = await fetch("https://drive.google.com/file/d/1Oo9817FY7WuYDj1BaYKHGybiSkhlwKnV/view?usp=sharing")
-      
-    tabcla.then((r) => r.text())
+    await fetch("./src/assets/tabs/tabCla.csv").then((r) => r.text())
       .then((text) => {
         setCla(parseCSVCla(text));
     })
 
-    let tabsubcla = await fetch("./src/assets/tabs/tabSubCla.csv")
-      
-    tabsubcla.then((r) => r.text())
+    await fetch("./src/assets/tabs/tabSubCla.csv").then((r) => r.text())
       .then((text) => {
         setSubCla(parseCSVSubCla(text));
     })
