@@ -1084,7 +1084,7 @@ export async function App() {
         setReg(parseCSVReg(text));
     })
 
-    let tabcla = await fetch("./src/assets/tabs/tabCla.csv")
+    let tabcla = await fetch("https://drive.google.com/file/d/1Oo9817FY7WuYDj1BaYKHGybiSkhlwKnV/view?usp=sharing")
       
     tabcla.then((r) => r.text())
       .then((text) => {
