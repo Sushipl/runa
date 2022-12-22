@@ -599,7 +599,6 @@ function UseReg(){
             }else if(Number(ele)){
               let of = []
               for(let ofi in oficios){
-                console.log(oficios)
                 of = of.concat(oficios[ofi])
               }
               list.push(<Select array={of} name={'oficios'+value[0]} key={'oficio'+value[0]} onChange={adicionar.handleSelectChange} />)
@@ -863,7 +862,7 @@ export function App() {
 
     for(const chave in result){
       result[chave] = i[ele];
-      console.log(i[ele])
+      console.log('i[ele]',i[ele])
       ele = ele +1;
     }
 
