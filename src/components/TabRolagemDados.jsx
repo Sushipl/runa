@@ -45,6 +45,8 @@ export const TabRolagemDados = ({add=[null, null], esc=0, set=() => {}}) => {
     const [addsab, setAddsab] = useState(0);
     const [addcar, setAddcar] = useState(0);
 
+    console.log('aaa3')
+
     useEffect(() => {
         let forc = 0;
         let des = 0;
