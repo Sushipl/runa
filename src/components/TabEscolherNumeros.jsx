@@ -16,7 +16,6 @@ export const TabEscolherNumeros = ({add=[null, null], esc=0, set= () => {}}) => 
     const [addint, setAddint] = useState(0);
     const [addsab, setAddsab] = useState(0);
     const [addcar, setAddcar] = useState(0);
-    console.log('aaa11')
     useEffect(() => {
         let forc = 0;
         let des = 0;
@@ -52,7 +51,6 @@ export const TabEscolherNumeros = ({add=[null, null], esc=0, set= () => {}}) => 
     const pt = [15, 14, 13, 12, 10, 8]
     const [n, setN] = useState(0);
     const pts = pt[n];
-    console.log('aaa10')
     const [forc, setForc] = useState(0);
     const [des, setDes] = useState(0);
     const [cons, setCons] = useState(0);
@@ -70,19 +68,16 @@ export const TabEscolherNumeros = ({add=[null, null], esc=0, set= () => {}}) => 
             ,Math.floor((car+addcar-10)/2)
     ])
     }, [pts, esc])
-    console.log('aaa9')
     if(esc===2){
         return(
             <div>
                 <label>{pts}</label><br/>
-                {console.log('aaa13')}
                 <span>Força</span><Camp num={forc+addforc} aume={() => colo(forc, setForc, pt, n, setN)}/>
                 <span>Destreza</span><Camp num={des+adddes} aume={() => colo(des, setDes, pt, n, setN)}/>
                 <span>Constituição</span><Camp num={cons+addcons} aume={() => colo(cons, setCons, pt, n, setN)}/>
                 <span>Inteligencia</span><Camp num={int+addint} aume={() => colo(int, setInt, pt, n, setN)}/>
                 <span>Sabedoria</span><Camp num={sab+addsab} aume={() => colo(sab, setSab, pt, n, setN)}/>
                 <span>Carisma</span><Camp num={car+addcar} aume={() => colo(car, setCar, pt, n, setN)}/>
-                {console.log('aaa15')}
             </div>
         )
     }else{return(<></>)}

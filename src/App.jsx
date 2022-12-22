@@ -495,15 +495,14 @@ function UseReg(){
 
         /* Linguás */
         if(index == 1){
-          
           if(ele != 'null'){
-            
             var l = ele.split(",")
 
             var l1 = l[0].split(' ')
 
             if(l1[0] == 'Escolher'){
               l.shift()
+
               for(var i = 0; i < l1[1]; i++){
                 idio.push(<Select array={l} key={'idioma'+value[0]} name={'idioma'+value[0]} onChange={adicionar.handleSelectChange}/>)
               }
@@ -850,7 +849,7 @@ function UseSubCla(){
 }
 
 export function App() {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null']);
 
   const adicionar = setVars({ initialValue: { Origem: "", Sub: "" , periciaP: {}, Regiao: [], Classe:"", SubC: "", SubC2: ""} })
 
