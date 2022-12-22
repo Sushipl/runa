@@ -1219,7 +1219,7 @@ export function App() {
     <div className="text-center h-auto break-all ">
       <Header />
       <div className="bg-[#5F4AA9] mt-5 pb-12">  
-        <h1 className="text-center">Para melhor construção dessa ficha é necessario abrir o <a className="font-bold" href="/src/downloads/livro.pdf" download>livro do jogador</a>, a versão lite é mais recomendada pelo fato de abrir vários livros de uma só vez ser um ato recorrente.<br />Ao final é necessario fazer download da <a className="font-bold" href="/src/downloads/ficha.pdf" download>ficha de personagem</a> (recomendo abrir no google chrome pois nele você podera abrir e editar a ficha diretamente) e preencher os campos conforme foi criado aqui.</h1>
+        <h1 className="text-center">Para melhor construção dessa ficha é necessario abrir o <a className="font-bold" href="/downloads/livro.pdf" download>livro do jogador</a>, a versão lite é mais recomendada pelo fato de abrir vários livros de uma só vez ser um ato recorrente.<br />Ao final é necessario fazer download da <a className="font-bold" href="/downloads/ficha.pdf" download>ficha de personagem</a> (recomendo abrir no google chrome pois nele você podera abrir e editar a ficha diretamente) e preencher os campos conforme foi criado aqui.</h1>
         <br/>
         <h1 className="text-center font-semibold text-2xl">ATENÇÃO!</h1>
         <h1>Leia os traços das suas escolhas, a escolha das mágias e runa é por sua conta, consulte as páginas: 7 para súmario, 178 para heranças, 206 para runas, 243 para ofícios, 326 para lista de mágias</h1>
