@@ -1349,9 +1349,9 @@ export function App() {
           {console.log(list)}
           {console.log(csv[adicionar.valu.Origem][1])}
           <div className="float-left h-[100%] w-[16%]">
-            <TabRolagemDados add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
-            <TabEscolherNumeros add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
-            <TabPontosSoma add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
+            <TabRolagemDados add={['cons', list[8]]} esc={esc} set={setMods}/>
+            <TabEscolherNumeros add={['cons', list[8]]} esc={esc} set={setMods}/>
+            <TabPontosSoma add={['cons', list[8]]} esc={esc} set={setMods}/>
 
           </div>
           <div className="float-left h-[100%] w-[60%] break-normal">
