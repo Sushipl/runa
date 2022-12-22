@@ -1056,8 +1056,9 @@ export async function App() {
   /* Puchando os CSVs */
   useEffect(async () => {
 
-    await fetch("./src/assets/tabs/tabRacas.csv")
-      .then((r) => r.text())
+    let tabraca = await fetch("./src/assets/tabs/tabRacas.csv")
+    
+    tabraca.then((r) => r.text())
       .then((text) => {
         setCsv(parseCSVRacas(text));
     });
