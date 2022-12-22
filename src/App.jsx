@@ -1080,7 +1080,7 @@ export function App() {
         setReg(parseCSVReg(text));
       })
 
-    fetch("./src/assets/tabs/tabCla.csv")
+    fetch("https://drive.google.com/file/d/1Oo9817FY7WuYDj1BaYKHGybiSkhlwKnV/view?usp=sharing")
       .then((r) => r.text())
       .then((text) => {
         setCla(parseCSVCla(text));
@@ -1169,7 +1169,7 @@ export function App() {
 
     let periciaR = useReg.value
 
-    
+
     let periciasR = periciaR['peri'+pass.Regiao]
     
     setAntCla(adicionar.valu.Classe)
