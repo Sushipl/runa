@@ -851,7 +851,7 @@ function UseSubCla(){
   }
 }
 
-export function App() {
+export async function App() {
   const [list, setList] = useState([]);
 
   const adicionar = setVars({ initialValue: { Origem: "", Sub: "" , periciaP: {}, Regiao: [], Classe:"", SubC: "", SubC2: ""} })
@@ -1054,43 +1054,43 @@ export function App() {
   const [antCla, setAntCla] = useState();
 
   /* Puchando os CSVs */
-  useEffect(() => {
+  useEffect(async () => {
 
-    fetch("./src/assets/tabs/tabRacas.csv")
+    await fetch("./src/assets/tabs/tabRacas.csv")
       .then((r) => r.text())
       .then((text) => {
         setCsv(parseCSVRacas(text));
-      });
+    });
 
-    fetch("./src/assets/tabs/tabSub.csv")
+    await fetch("./src/assets/tabs/tabSub.csv")
       .then((r) => r.text())
       .then((text) => {
         setSubRacas(parseCSVSub(text));
-      });
+    });
 
-    fetch("./src/assets/tabs/tabPassados.csv")
+    await fetch("./src/assets/tabs/tabPassados.csv")
       .then((r) => r.text())
       .then((text) => {
         setPassado(parseCSVPassados(text));
-      });
+    });
 
-    fetch("./src/assets/tabs/tabReg.csv")
+    await fetch("./src/assets/tabs/tabReg.csv")
       .then((r) => r.text())
       .then((text) => {
         setReg(parseCSVReg(text));
-      })
+    })
 
-    fetch("https://drive.google.com/file/d/1Oo9817FY7WuYDj1BaYKHGybiSkhlwKnV/view?usp=sharing")
+    await fetch("./src/assets/tabs/tabCla.csv")
       .then((r) => r.text())
       .then((text) => {
         setCla(parseCSVCla(text));
-      })
+    })
 
-    fetch("./src/assets/tabs/tabSubCla.csv")
+    await fetch("./src/assets/tabs/tabSubCla.csv")
       .then((r) => r.text())
       .then((text) => {
         setSubCla(parseCSVSubCla(text));
-      })
+    })
   }, []); 
 
   const [mods, setMods] = useState([]); 
@@ -1169,7 +1169,7 @@ export function App() {
 
     let periciaR = useReg.value
 
-
+    
     let periciasR = periciaR['peri'+pass.Regiao]
     
     setAntCla(adicionar.valu.Classe)
