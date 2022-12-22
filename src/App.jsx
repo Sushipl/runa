@@ -204,7 +204,7 @@ function usePasCaracs() {
               let p = l[i].split(' ')
               if(Number(p[0])){
                 for(let n = 0; n < p[0];n++){
-                  fin.push(<Select array={oficios[p[0]]} name={'Oficio'+n} onChange={adicionar.handleSelectChange} key={'Oficio'+value[0]+n+i} />)
+                  fin.push(<Select array={oficios[p[1]]} name={'Oficio'+n} onChange={adicionar.handleSelectChange} key={'Oficio'+value[0]+n+i} />)
                 }
               }else{fin.push(l[i]+' ')}
             }
@@ -225,7 +225,7 @@ function usePasCaracs() {
         if(index == 4){
           let l = ele.split(',')
           if(l[0] == 'Escolha'){
-            l.splice(0, 0)
+            l.splice(0, 1)
             list.push(<Select name={'Proficiencia'} array={l} onChange={adicionar.handleSelectChange} key={'proficiencia'} />)
           }else{list.push(value[4])}
         }
@@ -259,7 +259,7 @@ function useSubCaracs() {
         let pa = ''
         value.forEach((ele, index) => {
           // atributo a acrescentar
-          if (index == 0) {
+          if (index == 1) {
             lista.push(ele)
           }
 
@@ -268,7 +268,7 @@ function useSubCaracs() {
             for (var i = 0; i < ele; i++) {
               hera.push(
                 <div key={'Heranca' + i}>
-                  <span>Herança {i + 0}:</span>
+                  <span>Herança {i + 1}:</span>
                   <Select name={"Heranca"} array={herancas} raca={hera[pass.Origem]} heran={hera[pass.Regiao]} onChange={adicionar.handleSelectChange} />
                 </div>)
             }
@@ -307,7 +307,7 @@ function useSubCaracs() {
               if (l[0] == "Escolher") {
                 prof.push(
                   <div key="proficiencia">
-                    <Select name="proficiencia" array={l.slice(0)} onChange={adicionar.handleSelectChange} />
+                    <Select name="proficiencia" array={l.slice(1)} onChange={adicionar.handleSelectChange} />
                   </div>
                 )
                 pa = adicionar.valu
@@ -350,7 +350,7 @@ function useSubCaracs() {
                       </div>
                     )
                     i++
-                  } else if (i == 0) {
+                  } else if (i == 1) {
                     idio.push(
                       <div key='idiomaexo'>
                         <span>Idioma exótico:</span>
@@ -388,7 +388,7 @@ function useCaracs() {
         value.forEach((ele, index) => {
           // Heranças  
           if (index == 2) {
-            for (var i = 0; i <= ele; i++) {
+            for (var i = 1; i <= ele; i++) {
               heras.push(
                 <div key={"heranca" + i}>
                   <Select name={"Heranca" + i} array={herancas} raca={hera[pass.Origem]} heran={hera[pass.Regiao]} onChange={adicionar.handleSelectChange} />
@@ -413,8 +413,8 @@ function useCaracs() {
                 if (Number(l[elem])) {
                   for (var i = 0; i < l[elem]; i++) {
                     lings.push(
-                      <div key={"idioma" + i + 0}>
-                        <Select name={"idioma " + i + 0} array={linguasco} onChange={adicionar.handleSelectChange} />
+                      <div key={"idioma" + i + 1}>
+                        <Select name={"idioma " + i + 1} array={linguasco} onChange={adicionar.handleSelectChange} />
                       </div>
                     )
                   }
@@ -466,10 +466,10 @@ function useCaracs() {
           }
 
           // Traços
-          if (index == 0) {
-            if (index[0] != 'null') {
+          if (index == 10) {
+            if (index[10] != 'null') {
               lista.push(
-                value[0]
+                value[10]
               )
             }
           }
@@ -494,16 +494,16 @@ function UseReg(){
       value.forEach((ele, index) => {
 
         /* Linguás */
-        if(index == 0){
+        if(index == 1){
           if(ele != 'null'){
             var l = ele.split(",")
 
-            var l0 = l[0].split(' ')
+            var l1 = l[0].split(' ')
 
-            if(l0[0] == 'Escolher'){
+            if(l1[0] == 'Escolher'){
               l.shift()
 
-              for(var i = 0; i < l0[0]; i++){
+              for(var i = 0; i < l1[1]; i++){
                 idio.push(<Select array={l} key={'idioma'+value[0]} name={'idioma'+value[0]} onChange={adicionar.handleSelectChange}/>)
               }
             }else{
@@ -529,7 +529,7 @@ function UseReg(){
             if(puma[0] == 'Escolher'){
               l.shift()
               
-              for(var i = 0; i < puma[0]; i++){
+              for(var i = 0; i < puma[1]; i++){
                 per.push(<Select name={'peri'+value[0]} key={'peri'+value[0]} array={l} onChange={adicionar.handleSelectChange} />)
               }
             }else if(Number(ele)){
@@ -549,22 +549,22 @@ function UseReg(){
             let l = ele.split(',')
             for(let el in l){
               if(l[el] == 'Armas Simples'){
-                l.splice(el, 0)
+                l.splice(el, 1)
                 l = l.concat(armas.Normal.Simples.Corp,armas.Normal.Simples.Dist)
               }
               if(l[el] == 'Armas Marciais'){
-                l.splice(el, 0)
+                l.splice(el, 1)
                 l = l.concat(armas.Normal.Marciais.Corp,armas.Normal.Marciais.Dist)
               }
               if(l[el] == 'Armas de Fogo'){
-                l.splice(el, 0)
+                l.splice(el, 1)
                 l = l.concat(armas['Armas de Fogo']['Leves'],armas['Armas de Fogo']['Médias'],armas['Armas de Fogo']['Longas'],armas['Armas de Fogo']['Canhões'],armas['Armas de Fogo']['Lanças-chamas'])
               }
             }
             let puma = l[0].split(' ')
             if(puma[0] == 'Escolher'){
               l.shift()
-              for(let i = 0; i < puma[0]; i++){
+              for(let i = 0; i < puma[1]; i++){
                 arms.push(<Select array={l} name={'armas'+value[0]+i} key={'armas'+value[0]+i} onChange={adicionar.handleSelectChange}/>)
               }
             } 
@@ -589,11 +589,11 @@ function UseReg(){
               for(let of in l){
                 if(l[of] == "Artesão" || l[of] == "Jogador" || l[of] == "Músico" || l[of] == "Condutor"){
                   l = l.concat(oficios[l[of]])
-                  l.splice(of, 0)
+                  l.splice(of, 1)
 
                 }
               }
-              for(let i = 0; i < puma[0]; i++){
+              for(let i = 0; i < puma[1]; i++){
                 list.push(<Select array={l} name={'oficios'+value[0]} key={'oficio'+value[0]} onChange={adicionar.handleSelectChange} />)
               }
             }else if(Number(ele)){
@@ -628,7 +628,7 @@ function UseCla(){
       value.forEach((ele, index)=>{
 
         // dado de vida
-        if(index == 0){
+        if(index == 1){
           list.push(ele)
         }
         
@@ -672,10 +672,10 @@ function UseCla(){
                 var co = l[i].split(' ')
                 if(Number(co[0])){
                   var lis = []
-                  if(co[0] == 'Musicais'){
+                  if(co[1] == 'Musicais'){
                     lis = oficios['Músico']
                   }
-                  if(co[0]== "Escolher"){
+                  if(co[1]== "Escolher"){
                     lis = l.splice(i)
                     lis.shift()
                   }
@@ -755,12 +755,12 @@ function UseCla(){
         }
 
         // Modificador de dano de Magia
-        if(index == 0){
+        if(index == 10){
           list.push(ele)
         }
 
         // Sub-classe
-        if(index == 0){
+        if(index == 11){
           if(ele != 'null'){
             var l = ele.split(',') 
             list.push(<Select array={l} name={'SubC'+value[0]} key={'Sub'+value[0]} onChange={adicionar.handleSelectChange}/>)
@@ -768,13 +768,13 @@ function UseCla(){
         }
 
         // Sub-classe 2
-        if(index == 2){
+        if(index == 12){
           if(ele != 'null'){
             var l = ele.split(',')
             list.push(<Select array={l} name={'SubC2'+value[0]} key={'Sub2'+value[0]} onChange={adicionar.handleSelectChange}/>)
           }else{list.push(ele)}
         }
-        if(index == 3){
+        if(index == 13){
           list.push(ele)
         }
       })
@@ -791,7 +791,7 @@ function UseSubCla(){
     var list = []
     value.forEach((ele, index) => {
       // Pericias
-      if(index == 0){
+      if(index == 1){
         perisSubC = []
         if(ele.indexOf(' ou ') !== -1){
           let l = ele.split(' ou ')
@@ -863,6 +863,7 @@ export function App() {
 
     for(const chave in result){
       result[chave] = i[ele];
+      console.log(i[ele])
       ele = ele +1;
     }
 
