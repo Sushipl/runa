@@ -1416,8 +1416,8 @@ export function App() {
                 {isNull(list[43])}
                 {isNull(list[50])}
             </div>
-
-
+            
+            {console.log('aaa')}
 
             <br />
           </div>

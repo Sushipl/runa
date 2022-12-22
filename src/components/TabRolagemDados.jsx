@@ -98,6 +98,7 @@ export const TabRolagemDados = ({add=[null, null], esc=0, set=() => {}}) => {
     if(esc==1){
         return(
             <div>
+            {console.log('aaa')}
                 <label>{num}</label><br/>
                 
                 <span>Força</span><Camp num={forc+addforc} dimi={() => coloc(num, setForc, forc, setNum)} />
