@@ -1052,7 +1052,6 @@ export function App() {
 
   const [antCla, setAntCla] = useState();
 
-
   /* Puchando os CSVs */
   useEffect(() => {
     
