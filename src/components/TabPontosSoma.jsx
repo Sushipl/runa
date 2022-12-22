@@ -96,6 +96,7 @@ export const TabPontosSoma = ({add=[null, null], esc=0, set=()=>{}}) => {
                 <span>Inteligencia</span> <Camp num={int+addint} aume={() => aume(int, setInt, setPts, pts)} dimi={() => dimi(int, setInt, setPts, pts)}/>
                 <span>Sabedoria</span> <Camp num={sab+addsab} aume={() => aume(sab, setSab, setPts, pts)} dimi={() => dimi(sab, setSab, setPts, pts)}/>
                 <span>Carisma</span> <Camp num={car+addcar} aume={() => aume(car, setCar, setPts, pts)} dimi={() => dimi(car, setCar, setPts, pts)}/>
+                {console.log('aaa14')}
             </div>
         )
     }else{return(<></>)}

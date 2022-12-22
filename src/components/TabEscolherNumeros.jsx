@@ -82,6 +82,7 @@ export const TabEscolherNumeros = ({add=[null, null], esc=0, set= () => {}}) => 
                 <span>Inteligencia</span><Camp num={int+addint} aume={() => colo(int, setInt, pt, n, setN)}/>
                 <span>Sabedoria</span><Camp num={sab+addsab} aume={() => colo(sab, setSab, pt, n, setN)}/>
                 <span>Carisma</span><Camp num={car+addcar} aume={() => colo(car, setCar, pt, n, setN)}/>
+                {console.log('aaa15')}
             </div>
         )
     }else{return(<></>)}
