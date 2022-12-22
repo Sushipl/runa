@@ -1038,7 +1038,7 @@ export function App() {
     return splitCSV(text, result)
   }
 
-  const [csv, setCsv] = useState({ "": ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'] });
+  const [csv, setCsv] = useState({ "": ['null', null, 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'] });
 
   const [subRacas, setSubRacas] = useState({"": ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'] });
 
