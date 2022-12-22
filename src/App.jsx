@@ -791,7 +791,6 @@ function UseSubCla(){
   return{valu:adicionar.valu,
     fun: (value) => {
     var list = []
-    console.log(value)
     value.forEach((ele, index) => {
       // Pericias
       if(index == 1){
@@ -1056,37 +1055,42 @@ export function App() {
   /* Puchando os CSVs */
   useEffect(() => {
     
-    fetch("./src/assets/tabs/tabRacas.csv")
+    async function Fetch(dir){
+      let re = await fetch(dir)
+      return re
+    }
+
+    Fetch("./src/assets/tabs/tabRacas.csv")
       .then((r) => r.text())
       .then((text) => {
         setCsv(parseCSVRacas(text));
     });
 
-    fetch("./src/assets/tabs/tabSub.csv")
+    Fetch("./src/assets/tabs/tabSub.csv")
       .then((r) => r.text())
       .then((text) => {
         setSubRacas(parseCSVSub(text));
     });
 
-    fetch("./src/assets/tabs/tabPassados.csv")
+    Fetch("./src/assets/tabs/tabPassados.csv")
       .then((r) => r.text())
       .then((text) => {
         setPassado(parseCSVPassados(text));
     });
 
-    fetch("./src/assets/tabs/tabReg.csv")
+    Fetch("./src/assets/tabs/tabReg.csv")
       .then((r) => r.text())
       .then((text) => {
         setReg(parseCSVReg(text));
     })
 
-    fetch("./src/assets/tabs/tabCla.csv")
+    Fetch("./src/assets/tabs/tabCla.csv")
       .then((r) => r.text())
       .then((text) => {
         setCla(parseCSVCla(text));
     })
 
-    fetch("./src/assets/tabs/tabSubCla.csv")
+    Fetch("./src/assets/tabs/tabSubCla.csv")
       .then((r) => r.text())
       .then((text) => {
         setSubCla(parseCSVSubCla(text));
@@ -1128,8 +1132,6 @@ export function App() {
 
     var addSubC2 = ['null','null','null','null','null','null','null']
 
-    
-    console.log(pass[na])
     if(subCla[pass[na]]){
       addSubC = useSubCla.fun(subCla[pass[na]])
       
@@ -1140,8 +1142,6 @@ export function App() {
     }
     
     const listaf = adicional.concat(addsub, addPassa, addReg, addCla, addSubC, addSubC2);
-
-    console.log(listaf)
 
     adicionar.setValu({...adicionar.valu})
     setList(listaf);
@@ -1184,8 +1184,6 @@ export function App() {
     }
 
     adicionar.setValu({...adicionar.valu, periciaP, periciaC, periciaS, periciasR, periciasCl, perisSubC})
-
-    console.log(adicionar.valu)
 
     if(pass.Regiao != undefined){
       useReg.setValu({['peri'+pass.Regiao]:periciaR['peri'+pass.Regiao]})
