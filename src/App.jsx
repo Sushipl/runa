@@ -1084,7 +1084,7 @@ export function App() {
         setReg(parseCSVReg(text));
     })
 
-    Fetch("./src/assets/tabs/tabCla.csv")
+    Fetch("https://drive.google.com/file/d/1Oo9817FY7WuYDj1BaYKHGybiSkhlwKnV/view?usp=sharing")
       .then((r) => r.text())
       .then((text) => {
         setCla(parseCSVCla(text));
