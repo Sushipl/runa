@@ -851,7 +851,7 @@ function UseSubCla(){
   }
 }
 
-export async function App() {
+export function App() {
   const [list, setList] = useState([]);
 
   const adicionar = setVars({ initialValue: { Origem: "", Sub: "" , periciaP: {}, Regiao: [], Classe:"", SubC: "", SubC2: ""} })
