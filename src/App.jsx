@@ -862,7 +862,6 @@ export function App() {
 
     for(const chave in result){
       result[chave] = i[ele];
-      console.log('i[ele]',i[ele])
       ele = ele +1;
     }
 
