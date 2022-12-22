@@ -1061,37 +1061,37 @@ export function App() {
       return re
     }
 
-    Fetch("/src/assets/tabs/tabRacas.csv")
+    Fetch("/tabs/tabRacas.csv")
       .then((r) => r.text())
       .then((text) => {
         setCsv(parseCSVRacas(text));
     });
 
-    Fetch("/src/assets/tabs/tabSub.csv")
+    Fetch("/tabs/tabSub.csv")
       .then((r) => r.text())
       .then((text) => {
         setSubRacas(parseCSVSub(text));
     });
 
-    Fetch("/src/assets/tabs/tabPassados.csv")
+    Fetch("/tabs/tabPassados.csv")
       .then((r) => r.text())
       .then((text) => {
         setPassado(parseCSVPassados(text));
     });
 
-    Fetch("/src/assets/tabs/tabReg.csv")
+    Fetch("/tabs/tabReg.csv")
       .then((r) => r.text())
       .then((text) => {
         setReg(parseCSVReg(text));
     })
 
-    Fetch("/src/assets/tabs/tabCla.csv")
+    Fetch("/tabs/tabCla.csv")
       .then((r) => r.text())
       .then((text) => {
         setCla(parseCSVCla(text));
     })
 
-    Fetch("/src/assets/tabs/tabSubCla.csv")
+    Fetch("/tabs/tabSubCla.csv")
       .then((r) => r.text())
       .then((text) => {
         setSubCla(parseCSVSubCla(text));

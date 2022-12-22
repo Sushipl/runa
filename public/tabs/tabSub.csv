@@ -1,0 +1,20 @@
+Arbóreo;cons;2;25;null;null;null;antroplantae;Pele de Árvove Enraizamento de Batalha, Duro como um Tronco, Regeneração, Fibras
+Floral;sabe;2;30;null;null;null;antroplantae;Chicote de Espinho,Regeneração Acelerada, Corpo Frágil, Defesa Natural
+Ligeiro;dest;2;40;1;null;null;construto;Energia Cinética, Duelista
+Emissário;cons;2;30;null;Escolher,Acrobacia,Arcanismo,Atletismo,História,Intuição,Medicina,Natureza,Percepção,Prestidigitação,Religião,Sobrevivência,Tecnologia;null;construto;Geolocalização, Aumentar a Voltagem
+Brutal;forc;2;30;null;null;null;construto;Ultrapassar os Limites, Força Pneumática, Resistente
+Elemental Glacial;null;null;null;null;null;null;meio-dragão;Constituição Glacial, Vulnerabilidade a Dano, Atributos Físicos Pleno, Atributos Físicos Superior, Arma de Sopro Gélido, Ações Pleno, Ações Superior
+Elemental Infernal;null;null;null;null;null;null;meio-dragão;Vulnerabilidade a Dano, Atributos Físicos Pleno, Atributos Físicos Superior, Arma Sopro Ígneo, Ações Pleno, Ações Superior
+Elemental da Montanha;null;null;null;null;null;null;meio-dragão;Vulnerabilidade a Dano, Atributos Físicos Pleno, Atributos Físicos Superior, Arma Sopro Trovejante, Ações Pleno, Ações Superior
+Elemental das Nuvens;null;null;null;null;null;null;meio-dragão;Vulnerabilidade a Dano, Atributos Físicos Pleno, Atributos Físicos Superior, Arma Sopro Elétrico, Ações Pleno, Ações Superior
+Elemental do Oceano;null;null;null;null;null;null;meio-dragão;Constituição Anfíbia, Vulnerabilidade a Dano, Recuperação Dracônica, Atributos Físicos Pleno, Atributos Físicos Superior, Arma de Sopro Superior, Ações Pleno, Ações Superior
+Troll do Gelo;null;null;null;null;null;null;troll;Nascido da Tundra, Em Caçada, Olhos da Noite
+Troll da Areia;null;null;null;null;null;null;troll;Nascido do Deserto, Mestres Elusivos, Ataque Elusivo
+Oovi-Kat;cari;2;35;null;Enganação;Vastayasha’rei,2,1;vastaya;Mestre de Sho’ma, Epiderme Cromática, Clone de Sho’ma
+Marai;inte;2;25;null;null;null;vastaya;Deslocamento, Sonar, Enxergar no Escuro, Anfíbio, Estilo do Mar, Sho’ma
+Shimon;sabe;2;30;1;Atletismo,1;null;vastaya;Escalar Proficiente, Sem Limites, Fúria Simia, Sho’ma, Forma Animal
+Fauhwoon;sabe;2;35;null;null;null;vastaya;Visão no Escuro, Elusivo, Alinhamento Onírico, Chifres, Protetores Naturais, Queridos da Natureza, Maiga Inata, Sho’ma
+Ottrani;sabe;2;30;null;Medicina;null;vastaya;Autosacrifisio, Chifres, Cura Verdadeira, Resgate, Magia Inata, Sho’ma
+Kiilash;forc;2;35;null;null;null;vastaya;Camuflagem, Garras, Mordida, Ferocidade, Sho’ma
+Lhotlan;dest;2;30;null;Percepção;null;vastaya;Plumadagas, Retorno das Lâminas, Salto Vastaya, Sho’ma
+null;null;null;null;null;null;null;null;null
