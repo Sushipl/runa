@@ -854,7 +854,7 @@ export function App() {
 
   function splitCSV(text, result){
     if (text === undefined){return}
-    let l = text.split('\r\n');
+    let l = text.split('\n');
     
     let i = l.map((i) => i.split(';'));
 
