@@ -1078,7 +1078,7 @@ export function App() {
         setPassado(parseCSVPassados(text));
     });
 
-    Fetch("/tabs/tabReg.csv")
+    Fetch("/tabs/TabReg.csv")
       .then((r) => r.text())
       .then((text) => {
         setReg(parseCSVReg(text));
