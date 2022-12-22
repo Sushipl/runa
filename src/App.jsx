@@ -164,37 +164,35 @@ function usePasCaracs() {
       list = [];
       value.forEach((ele, index) => {
         // Pericias
-        if(index == 1){
-          if(ele != 'null'){
-            const puma = ele.split(',')
-            const puma1 = puma[0].split(' ')
-            let l = []
-            perisP = {}
-            if(puma1[0] == "Escolher"){
-              adicionar.setValu()
-              puma.shift()
-              for(let i = 0; i < puma1[1] ; i++){
-                l.push(<Select key={'pericias'+i} array={puma} name={'pericia'+i} onChange={adicionar.handleSelectChange} />)
-              }
-              list.push(l)
-            }else{
-              for(let i = 0; i < puma.length; i++){
-                if(puma[i].indexOf(' ou ') !== -1){
-                  let p = puma[i].split(' ou ')
-                  l.push(<Select key={'pericias'+i+2} array={p} name={'pericia'+i} onChange={adicionar.handleSelectChange} />)                
-                  ele = ele.replace(puma[i],'')
-                }else{
-                  perisP = {...perisP, ['pericia'+i]: puma[i]}
-                }
-              }
-
-              ele = ele.replace(',',', ')
-              
-              l.push(ele)
-
-              list.push(l)
+        if(index == 0){
+          const puma = ele.split(',')
+          const puma0 = puma[0].split(' ')
+          let l = []
+          perisP = {}
+          if(puma0[0] == "Escolher"){
+            adicionar.setValu()
+            puma.shift()
+            for(let i = 0; i < puma0[0] ; i++){
+              l.push(<Select key={'pericias'+i} array={puma} name={'pericia'+i} onChange={adicionar.handleSelectChange} />)
             }
-          }else{list.push('null')}
+            list.push(l)
+          }else{
+            for(let i = 0; i < puma.length; i++){
+              if(puma[i].indexOf(' ou ') !== -1){
+                let p = puma[i].split(' ou ')
+                l.push(<Select key={'pericias'+i+2} array={p} name={'pericia'+i} onChange={adicionar.handleSelectChange} />)                
+                ele = ele.replace(puma[i],'')
+              }else{
+                perisP = {...perisP, ['pericia'+i]: puma[i]}
+              }
+            }
+
+            ele = ele.replace(',',', ')
+            
+            l.push(ele)
+
+            list.push(l)
+          }
         }
         /* #fff45f */
         // Oficio
@@ -206,7 +204,7 @@ function usePasCaracs() {
               let p = l[i].split(' ')
               if(Number(p[0])){
                 for(let n = 0; n < p[0];n++){
-                  fin.push(<Select array={oficios[p[1]]} name={'Oficio'+n} onChange={adicionar.handleSelectChange} key={'Oficio'+value[0]+n+i} />)
+                  fin.push(<Select array={oficios[p[0]]} name={'Oficio'+n} onChange={adicionar.handleSelectChange} key={'Oficio'+value[0]+n+i} />)
                 }
               }else{fin.push(l[i]+' ')}
             }
@@ -227,7 +225,7 @@ function usePasCaracs() {
         if(index == 4){
           let l = ele.split(',')
           if(l[0] == 'Escolha'){
-            l.splice(0, 1)
+            l.splice(0, 0)
             list.push(<Select name={'Proficiencia'} array={l} onChange={adicionar.handleSelectChange} key={'proficiencia'} />)
           }else{list.push(value[4])}
         }
@@ -261,7 +259,7 @@ function useSubCaracs() {
         let pa = ''
         value.forEach((ele, index) => {
           // atributo a acrescentar
-          if (index == 1) {
+          if (index == 0) {
             lista.push(ele)
           }
 
@@ -270,7 +268,7 @@ function useSubCaracs() {
             for (var i = 0; i < ele; i++) {
               hera.push(
                 <div key={'Heranca' + i}>
-                  <span>Herança {i + 1}:</span>
+                  <span>Herança {i + 0}:</span>
                   <Select name={"Heranca"} array={herancas} raca={hera[pass.Origem]} heran={hera[pass.Regiao]} onChange={adicionar.handleSelectChange} />
                 </div>)
             }
@@ -309,7 +307,7 @@ function useSubCaracs() {
               if (l[0] == "Escolher") {
                 prof.push(
                   <div key="proficiencia">
-                    <Select name="proficiencia" array={l.slice(1)} onChange={adicionar.handleSelectChange} />
+                    <Select name="proficiencia" array={l.slice(0)} onChange={adicionar.handleSelectChange} />
                   </div>
                 )
                 pa = adicionar.valu
@@ -352,7 +350,7 @@ function useSubCaracs() {
                       </div>
                     )
                     i++
-                  } else if (i == 1) {
+                  } else if (i == 0) {
                     idio.push(
                       <div key='idiomaexo'>
                         <span>Idioma exótico:</span>
@@ -390,7 +388,7 @@ function useCaracs() {
         value.forEach((ele, index) => {
           // Heranças  
           if (index == 2) {
-            for (var i = 1; i <= ele; i++) {
+            for (var i = 0; i <= ele; i++) {
               heras.push(
                 <div key={"heranca" + i}>
                   <Select name={"Heranca" + i} array={herancas} raca={hera[pass.Origem]} heran={hera[pass.Regiao]} onChange={adicionar.handleSelectChange} />
