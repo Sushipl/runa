@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import Darrow from "../assets/Darrow.png"
-import Uarrow from "../assets/Uarrow.png"
 
 export const Camp = ({num, aume, dimi}) => {
 
@@ -12,8 +10,8 @@ export const Camp = ({num, aume, dimi}) => {
         if((typeof aume === 'function') & (typeof dimi === 'function')){
             setForma(
                 <div>
-                    <button className="" onClick={aume}><img src={Uarrow}/></button><br/>
-                    <button className="" onClick={dimi}><img src={Darrow}/></button><br/>
+                    <button className="" onClick={aume}><img src={"Uarrow.png"}/></button><br/>
+                    <button className="" onClick={dimi}><img src={"Darrow.png"}/></button><br/>
                 </div>
             )
         }else if(typeof aume === 'function'){
