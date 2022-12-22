@@ -164,7 +164,7 @@ function usePasCaracs() {
       list = [];
       value.forEach((ele, index) => {
         // Pericias
-        if(index == 0){
+        if(index == 1){
           const puma = ele.split(',')
           const puma1 = puma[0].split(' ')
           let l = []
@@ -172,7 +172,7 @@ function usePasCaracs() {
           if(puma1[0] == "Escolher"){
             adicionar.setValu()
             puma.shift()
-            for(let i = 0; i < puma1[0] ; i++){
+            for(let i = 0; i < puma1[1] ; i++){
               l.push(<Select key={'pericias'+i} array={puma} name={'pericia'+i} onChange={adicionar.handleSelectChange} />)
             }
             list.push(l)
@@ -204,7 +204,7 @@ function usePasCaracs() {
               let p = l[i].split(' ')
               if(Number(p[0])){
                 for(let n = 0; n < p[0];n++){
-                  fin.push(<Select array={oficios[p[0]]} name={'Oficio'+n} onChange={adicionar.handleSelectChange} key={'Oficio'+value[0]+n+i} />)
+                  fin.push(<Select array={oficios[p[1]]} name={'Oficio'+n} onChange={adicionar.handleSelectChange} key={'Oficio'+value[0]+n+i} />)
                 }
               }else{fin.push(l[i]+' ')}
             }
@@ -225,7 +225,7 @@ function usePasCaracs() {
         if(index == 4){
           let l = ele.split(',')
           if(l[0] == 'Escolha'){
-            l.splice(0, 0)
+            l.splice(0, 1)
             list.push(<Select name={'Proficiencia'} array={l} onChange={adicionar.handleSelectChange} key={'proficiencia'} />)
           }else{list.push(value[4])}
         }
@@ -259,7 +259,7 @@ function useSubCaracs() {
         let pa = ''
         value.forEach((ele, index) => {
           // atributo a acrescentar
-          if (index == 0) {
+          if (index == 1) {
             lista.push(ele)
           }
 
@@ -268,7 +268,7 @@ function useSubCaracs() {
             for (var i = 0; i < ele; i++) {
               hera.push(
                 <div key={'Heranca' + i}>
-                  <span>Herança {i + 0}:</span>
+                  <span>Herança {i + 1}:</span>
                   <Select name={"Heranca"} array={herancas} raca={hera[pass.Origem]} heran={hera[pass.Regiao]} onChange={adicionar.handleSelectChange} />
                 </div>)
             }
@@ -307,7 +307,7 @@ function useSubCaracs() {
               if (l[0] == "Escolher") {
                 prof.push(
                   <div key="proficiencia">
-                    <Select name="proficiencia" array={l.slice(0)} onChange={adicionar.handleSelectChange} />
+                    <Select name="proficiencia" array={l.slice(1)} onChange={adicionar.handleSelectChange} />
                   </div>
                 )
                 pa = adicionar.valu
@@ -350,7 +350,7 @@ function useSubCaracs() {
                       </div>
                     )
                     i++
-                  } else if (i == 0) {
+                  } else if (i == 1) {
                     idio.push(
                       <div key='idiomaexo'>
                         <span>Idioma exótico:</span>
@@ -388,7 +388,7 @@ function useCaracs() {
         value.forEach((ele, index) => {
           // Heranças  
           if (index == 2) {
-            for (var i = 0; i <= ele; i++) {
+            for (var i = 1; i <= ele; i++) {
               heras.push(
                 <div key={"heranca" + i}>
                   <Select name={"Heranca" + i} array={herancas} raca={hera[pass.Origem]} heran={hera[pass.Regiao]} onChange={adicionar.handleSelectChange} />
@@ -413,8 +413,8 @@ function useCaracs() {
                 if (Number(l[elem])) {
                   for (var i = 0; i < l[elem]; i++) {
                     lings.push(
-                      <div key={"idioma" + i + 0}>
-                        <Select name={"idioma " + i + 0} array={linguasco} onChange={adicionar.handleSelectChange} />
+                      <div key={"idioma" + i + 1}>
+                        <Select name={"idioma " + i + 1} array={linguasco} onChange={adicionar.handleSelectChange} />
                       </div>
                     )
                   }
@@ -494,7 +494,7 @@ function UseReg(){
       value.forEach((ele, index) => {
 
         /* Linguás */
-        if(index == 0){
+        if(index == 1){
           if(ele != 'null'){
             var l = ele.split(",")
 
@@ -503,7 +503,7 @@ function UseReg(){
             if(l1[0] == 'Escolher'){
               l.shift()
 
-              for(var i = 0; i < l1[0]; i++){
+              for(var i = 0; i < l1[1]; i++){
                 idio.push(<Select array={l} key={'idioma'+value[0]} name={'idioma'+value[0]} onChange={adicionar.handleSelectChange}/>)
               }
             }else{
@@ -529,7 +529,7 @@ function UseReg(){
             if(puma[0] == 'Escolher'){
               l.shift()
               
-              for(var i = 0; i < puma[0]; i++){
+              for(var i = 0; i < puma[1]; i++){
                 per.push(<Select name={'peri'+value[0]} key={'peri'+value[0]} array={l} onChange={adicionar.handleSelectChange} />)
               }
             }else if(Number(ele)){
@@ -549,22 +549,22 @@ function UseReg(){
             let l = ele.split(',')
             for(let el in l){
               if(l[el] == 'Armas Simples'){
-                l.splice(el, 0)
+                l.splice(el, 1)
                 l = l.concat(armas.Normal.Simples.Corp,armas.Normal.Simples.Dist)
               }
               if(l[el] == 'Armas Marciais'){
-                l.splice(el, 0)
+                l.splice(el, 1)
                 l = l.concat(armas.Normal.Marciais.Corp,armas.Normal.Marciais.Dist)
               }
               if(l[el] == 'Armas de Fogo'){
-                l.splice(el, 0)
+                l.splice(el, 1)
                 l = l.concat(armas['Armas de Fogo']['Leves'],armas['Armas de Fogo']['Médias'],armas['Armas de Fogo']['Longas'],armas['Armas de Fogo']['Canhões'],armas['Armas de Fogo']['Lanças-chamas'])
               }
             }
             let puma = l[0].split(' ')
             if(puma[0] == 'Escolher'){
               l.shift()
-              for(let i = 0; i < puma[0]; i++){
+              for(let i = 0; i < puma[1]; i++){
                 arms.push(<Select array={l} name={'armas'+value[0]+i} key={'armas'+value[0]+i} onChange={adicionar.handleSelectChange}/>)
               }
             } 
@@ -589,11 +589,11 @@ function UseReg(){
               for(let of in l){
                 if(l[of] == "Artesão" || l[of] == "Jogador" || l[of] == "Músico" || l[of] == "Condutor"){
                   l = l.concat(oficios[l[of]])
-                  l.splice(of, 0)
+                  l.splice(of, 1)
 
                 }
               }
-              for(let i = 0; i < puma[0]; i++){
+              for(let i = 0; i < puma[1]; i++){
                 list.push(<Select array={l} name={'oficios'+value[0]} key={'oficio'+value[0]} onChange={adicionar.handleSelectChange} />)
               }
             }else if(Number(ele)){
@@ -628,7 +628,7 @@ function UseCla(){
       value.forEach((ele, index)=>{
 
         // dado de vida
-        if(index == 0){
+        if(index == 1){
           list.push(ele)
         }
         
@@ -672,10 +672,10 @@ function UseCla(){
                 var co = l[i].split(' ')
                 if(Number(co[0])){
                   var lis = []
-                  if(co[0] == 'Musicais'){
+                  if(co[1] == 'Musicais'){
                     lis = oficios['Músico']
                   }
-                  if(co[0]== "Escolher"){
+                  if(co[1]== "Escolher"){
                     lis = l.splice(i)
                     lis.shift()
                   }
@@ -791,7 +791,7 @@ function UseSubCla(){
     var list = []
     value.forEach((ele, index) => {
       // Pericias
-      if(index == 0){
+      if(index == 1){
         perisSubC = []
         if(ele.indexOf(' ou ') !== -1){
           let l = ele.split(' ou ')
@@ -863,7 +863,7 @@ export function App() {
 
     for(const chave in result){
       result[chave] = i[ele];
-      ele = ele +0;
+      ele = ele +1;
     }
 
     return result
@@ -1195,7 +1195,7 @@ export function App() {
     if (tipo.target.id == "smp") {
       setEsc(0)
     } else if (tipo.target.id == "rlg") {
-      setEsc(0)
+      setEsc(1)
     } else if (tipo.target.id == "ecn") {
       setEsc(2)
     }
@@ -1263,7 +1263,7 @@ export function App() {
               <span className="w-[100%] inline-block">Classe e Nível:</span>
               <div className="w-[100%] text-xl inline-block"><Select name="Classe" array={classes} onChange={adicionar.handleSelectChange} />
               {isNull(list[35])}
-            {isNull(list[36])}<span className="bg bg-purple-400 border-[3.5px] border-current border-neutral-900">0</span></div>
+            {isNull(list[36])}<span className="bg bg-purple-400 border-[3.5px] border-current border-neutral-900">1</span></div>
             </div>
           </div>
         </div>
@@ -1281,7 +1281,7 @@ export function App() {
           {isNull(list[44])} {isNull(list[51])}
         </div>
         <br />
-        <div className='text-[0.20rem] font-semibold'>
+        <div className='text-[1.20rem] font-semibold'>
           Vida:  {isNull(list[26])} | 
           Vida adicional nos próximos níveis: ({isNull(list[25])} ou {isNull(list[27])}) + Constituição | 
           Salvaguardas: {isNull(list[30])} | 
@@ -1347,20 +1347,22 @@ export function App() {
             </div>
           </div>
           {console.log(list)}
-          {console.log(csv[adicionar.valu.Origem][0])}
+          {console.log(csv[adicionar.valu.Origem][1])}
           <div className="float-left h-[100%] w-[16%]">
-            <TabRolagemDados add={[csv[adicionar.valu.Origem][0], list[8]]} esc={esc} set={setMods}/>
-            <TabEscolherNumeros add={[csv[adicionar.valu.Origem][0], list[8]]} esc={esc} set={setMods}/>
-            <TabPontosSoma add={[csv[adicionar.valu.Origem][0], list[8]]} esc={esc} set={setMods}/>
+            <TabRolagemDados add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
+            <TabEscolherNumeros add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
+            <TabPontosSoma add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
 
           </div>
           <div className="float-left h-[100%] w-[60%] break-normal">
             <div className="h-[10%]">
               <span>Deslocamento: </span>
-              {(!Number.isNaN(Number(isNull(list[0]))) ? console.log('aaa') : 0)+
-              (!Number.isNaN(Number(isNull(list[42]))) ? Number(list[42]) : 0)+
-              (!Number.isNaN(Number(isNull(list[49]))) ? Number(list[49]) : 0)+ 
-              (!Number.isNaN(Number(isNull(list[10]))) ? Number(list[10]) : 0)}
+              {
+                (!Number.isNaN(Number(isNull(list[0]))) ? Number(list[1])  : 0)+
+                (!Number.isNaN(Number(isNull(list[42]))) ? Number(list[42]) : 0)+
+                (!Number.isNaN(Number(isNull(list[49]))) ? Number(list[49]) : 0)+ 
+                (!Number.isNaN(Number(isNull(list[10]))) ? Number(list[10]) : 0)
+              }
               
                Pés
             </div>
@@ -1425,7 +1427,7 @@ export function App() {
 /* 
     ORDEM DE LIST
   0 Herança da Origem
-  0 Pés
+  1 Pés
   2 Linguás
   3 Pericias
   4 Aprimoramentos
