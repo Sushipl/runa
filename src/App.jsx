@@ -1349,15 +1349,15 @@ export function App() {
           {console.log(list)}
           {console.log(csv[adicionar.valu.Origem][1])}
           <div className="float-left h-[100%] w-[16%]">
-            <TabRolagemDados add={['cons', list[8]]} esc={esc} set={setMods}/>
-            <TabEscolherNumeros add={['cons', list[8]]} esc={esc} set={setMods}/>
-            <TabPontosSoma add={['cons', list[8]]} esc={esc} set={setMods}/>
+            <TabRolagemDados add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
+            <TabEscolherNumeros add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
+            <TabPontosSoma add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
 
           </div>
           <div className="float-left h-[100%] w-[60%] break-normal">
             <div className="h-[10%]">
               <span>Deslocamento: </span>
-              {(!Number.isNaN(Number(isNull(list[1]))) ? Number(list[1]) : 0)+
+              {(!Number.isNaN(Number(isNull(list[1]))) ? console.log('aaa') : 0)+
               (!Number.isNaN(Number(isNull(list[42]))) ? Number(list[42]) : 0)+
               (!Number.isNaN(Number(isNull(list[49]))) ? Number(list[49]) : 0)+ 
               (!Number.isNaN(Number(isNull(list[10]))) ? Number(list[10]) : 0)}
