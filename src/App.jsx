@@ -855,6 +855,7 @@ export function App() {
   const adicionar = setVars({ initialValue: { Origem: "", Sub: "" , periciaP: {}, Regiao: [], Classe:"", SubC: "", SubC2: ""} })
 
   function splitCSV(text, result){
+    if (text === undefined){return}
     let l = text.split('\r\n');
     
     let i = l.map((i) => i.split(';'));
