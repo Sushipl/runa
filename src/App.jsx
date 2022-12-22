@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { Camp } from "./components/Camp";
 import { Header } from "./components/Header"
 import { Mod } from "./components/Mod";
 import { Select } from "./components/Select"
