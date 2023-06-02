@@ -788,7 +788,17 @@ function UseSubCla(){
   return{valu:adicionar.valu,
     fun: (value) => {
     var list = []
+
     value.forEach((ele, index) => {
+      // push padrão para lista se ele não for nulo
+      function push(i = 1, nu = ele){
+        if(index == i){
+          if(ele != 'null'){
+            list.push(ele)
+          } else{list.push(nu)}
+        }
+      }
+
       // Pericias
       if(index == 1){
         perisSubC = []
@@ -805,42 +815,22 @@ function UseSubCla(){
       }
 
       // Proficiencias
-      if(index == 2){
-        if(ele != 'null'){
-          list.push(ele)
-        } else{list.push(ele)}
-      }
+      push(2)
 
       // Oficioos
-      if(index == 3){
-        if(ele != 'null'){
-          list.push(ele)
-        } else{list.push(ele)}
-      }
+      push(3)
 
       // Idiomas
-      if(index == 4){
-        if(ele != 'null'){
-          list.push(ele)
-        } else{list.push(ele)}
-      }
+      push(4)
 
       // Movimentação adicional
-      if(index == 5){
-        if(ele != 'null'){
-          list.push(ele)
-        } else{list.push(0)}
-      }
+      push(5, 0)
+
       // Traços
-      if(index == 6){
-        if(ele != 'null'){
-          list.push(ele)
-        } else{list.push(ele)}
-      }
+      push(6)
+
       // Pág
-      if(index == 7){
-        list.push(ele)  
-      }
+      push(7)
     })
     return list
     }
@@ -1058,41 +1048,20 @@ export function App() {
       return re
     }
 
-    Fetch("/tabs/tabRacas.csv")
-      .then((r) => r.text())
-      .then((text) => {
-        setCsv(parseCSVRacas(text));
-    });
+    function SetCsvs(set=() =>{}, parse=() =>{}, loc= ""){
+      Fetch(`/tabs/tab${loc}.csv`)
+        .then((r) => r.text())
+        .then((text) => {
+          set(parse(text));
+      });
+    }
 
-    Fetch("/tabs/tabSub.csv")
-      .then((r) => r.text())
-      .then((text) => {
-        setSubRacas(parseCSVSub(text));
-    });
-
-    Fetch("/tabs/tabPassados.csv")
-      .then((r) => r.text())
-      .then((text) => {
-        setPassado(parseCSVPassados(text));
-    });
-
-    Fetch("/tabs/tabRegi.csv")
-      .then((r) => r.text())
-      .then((text) => {
-        setReg(parseCSVReg(text));
-    })
-
-    Fetch("/tabs/tabCla.csv")
-      .then((r) => r.text())
-      .then((text) => {
-        setCla(parseCSVCla(text));
-    })
-
-    Fetch("/tabs/tabSubCla.csv")
-      .then((r) => r.text())
-      .then((text) => {
-        setSubCla(parseCSVSubCla(text));
-    })
+    SetCsvs(setCsv,parseCSVRacas,"Racas")
+    SetCsvs(setSubRacas, parseCSVSub, "Sub")
+    SetCsvs(setPassado, parseCSVPassados, "Passados")
+    SetCsvs(setReg, parseCSVReg, "Regi")
+    SetCsvs(setCla, parseCSVCla, "Cla")
+    SetCsvs(setSubCla, parseCSVSubCla, "SubCla")
   }, []); 
 
   const [mods, setMods] = useState([]); 
@@ -1293,46 +1262,26 @@ export function App() {
               {pericias.map((e) => {
                 let check = false
                 let nu = 0
-                for(const chave in adicionar.valu['periciaP']){
-                  if(adicionar.valu['periciaP'][chave] == e[0]){
-                    nu=2
-                    check = true
-                  }
+                function It(loc=""){
+                  for(const chave in adicionar.valu[loc]){
+                    if(adicionar.valu[loc][chave] == e[0]){
+                      nu=2
+                      check = true
+                    }
+                  }                  
                 }
-                for(const chave in adicionar.valu['periciaS']){
-                  if(adicionar.valu['periciaS'][chave] == e[0]){
-                    nu=2
-                    check = true
-                  }
-                }
-        
-                for (const chave in adicionar.valu['periciasCl']){
-                  if(adicionar.valu['periciasCl'][chave] == e[0]){
-        
-                    nu=2
-                    check = true
-                  }
-                }
-                for(const chave in adicionar.valu['periciaC']){
-                  if(adicionar.valu['periciaC'][chave] == e[0]){
-        
-                    nu=2
-                    check = true
-                  }
-                }
+                It('periciaP')
+                It('periciaS')
+                It('periciasCl')
+                It('periciaC')
+                It('perisSubC')
+
                 if(adicionar.valu['periciasR'] == e[0]){
         
                   nu=2
                   check = true
                 }
-                for(const chave in adicionar.valu['perisSubC']){
-                  if(adicionar.valu['perisSubC'][chave] == e[0]){
-        
-                    nu=2
-                    check = true
-                  }
-                }
-        
+
                 return(
                   <Mod key={'pericia'+e[0]} e={e} nu={nu} ord={ord} mods={mods} check={check}/>
                 )
@@ -1345,7 +1294,7 @@ export function App() {
             </div>
             </div>
           </div>
-          <div className="float-left h-[100%] w-[16%]">
+          <div className="float-left h-[100%] min-w-[4%] max-w-[12%] w-auto">
             <TabRolagemDados add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
             <TabEscolherNumeros add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
             <TabPontosSoma add={[csv[adicionar.valu.Origem][1], list[8]]} esc={esc} set={setMods}/>
